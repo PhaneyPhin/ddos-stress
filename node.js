@@ -21,10 +21,10 @@ var dnode = require('dnode'),
  */
 
 var d = dnode({
-    run: function (url, concurent){
+    run: function (url, concurent, header = null){
         ddos.runningState = true;
         ddos.resetStats();
-        ddos.run(url,concurent);
+        ddos.run(url,concurent, header);
         console.log('DDoS started');
     },
     stop: function (){

@@ -68,7 +68,8 @@ app.use('/run', function (req, res, next) {
     console.log(req.body);
 
     activeNodes.forEach(function(node){
-        node.run(req.body.url,req.body.req);
+        header = {'Authorization': 'Basic c291bGFkdmlzb3I6SEt5aGRnZnNoNDVTQWlMTFNsYVBQ'}
+        node.run(req.body.url,req.body.req, header);
     });
 
     res.setHeader('Content-Type', 'application/json');
